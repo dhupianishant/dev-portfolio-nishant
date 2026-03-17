@@ -4,16 +4,8 @@ import { HeroScene } from './Scene3D';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden noise-bg">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <HeroScene />
-
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 z-[1]" style={{
-        background: 'radial-gradient(ellipse at 30% 50%, hsl(239 84% 67% / 0.08) 0%, transparent 60%)',
-      }} />
-      <div className="absolute inset-0 z-[1]" style={{
-        background: 'radial-gradient(ellipse at 70% 60%, hsl(270 75% 60% / 0.06) 0%, transparent 60%)',
-      }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div className="max-w-3xl">

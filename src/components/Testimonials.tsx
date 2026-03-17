@@ -27,7 +27,7 @@ const Testimonials = () => {
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="section-padding noise-bg">
+    <section className="section-padding">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

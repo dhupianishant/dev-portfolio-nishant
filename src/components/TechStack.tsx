@@ -42,7 +42,7 @@ const categories = [
 
 const TechStack = () => {
   return (
-    <section className="section-padding noise-bg">
+    <section className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

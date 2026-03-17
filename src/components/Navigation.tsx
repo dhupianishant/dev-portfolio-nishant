@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
@@ -14,6 +14,8 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const { scrollYProgress } = useScroll();
+  const progressX = useSpring(scrollYProgress, { stiffness: 140, damping: 24, mass: 0.3 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +52,20 @@ const Navigation = () => {
         isScrolled ? 'glass-nav' : ''
       }`}
     >
+      {/* Scroll progress (navbar underline) */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[3px] origin-left"
+        style={{ scaleX: progressX }}
+      >
+        <div
+          className="h-full w-full"
+          style={{
+            background: 'linear-gradient(90deg, hsl(239 84% 67%), hsl(270 75% 60%))',
+            boxShadow: '0 0 24px hsl(239 84% 67% / 0.35), 0 0 28px hsl(270 75% 60% / 0.25)',
+          }}
+        />
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
         <a href="#" className="font-display text-xl font-bold tracking-tight">
           <span className="gradient-text">Dev</span>

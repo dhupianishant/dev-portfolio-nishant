@@ -4,11 +4,6 @@ import { ArrowRight, Mail, Github, Linkedin } from 'lucide-react';
 const ContactCTA = () => {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0" style={{
-        background: 'radial-gradient(ellipse at 50% 80%, hsl(239 84% 67% / 0.1) 0%, transparent 60%)',
-      }} />
-
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
