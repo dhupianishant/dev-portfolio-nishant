@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+:import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'Work', href: '#work' },
@@ -13,17 +13,33 @@ const navItems = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Determine active section
+      const sections = navItems.map(item => item.href.slice(1));
+      const scrollY = window.scrollY + 100; // offset for navbar height
+      let current = '';
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
+        if (element && element.offsetTop <= scrollY) {
+          current = sections[i];
+          break;
+        }
+      }
+      setActiveSection(current);
+    };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // call once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('light', !isDark);
-  }, [isDark]);
+    document.documentElement.classList.remove('light'); // Ensure dark theme
+  }, []);
 
   return (
     <motion.nav
@@ -45,17 +61,15 @@ const Navigation = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
+              className={`text-sm font-medium transition-colors duration-300 ${
+                activeSection === item.href.slice(1)
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
             >
               {item.label}
             </a>
           ))}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-full glass-card hover:scale-110 transition-transform"
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
           <a
             href="#contact"
             className="px-5 py-2.5 rounded-full font-display text-sm font-semibold transition-all duration-300 hover:scale-105 glow-primary"
@@ -85,17 +99,15 @@ const Navigation = () => {
               key={item.label}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-muted-foreground hover:text-foreground transition-colors"
+              className={`block py-3 transition-colors ${
+                activeSection === item.href.slice(1)
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
             >
               {item.label}
             </a>
           ))}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="mt-2 p-2 rounded-full glass-card"
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
         </motion.div>
       )}
     </motion.nav>
