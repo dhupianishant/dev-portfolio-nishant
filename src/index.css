@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@500;600;700;800;900&display=swap');
+@font-face {
+  font-family: 'My-Font';
+  src: url('./assets/fonts/My-Font.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-family: 'My-Font', system-ui, serif;
+  }
+
   :root {
     --background: 240 6% 7%;
     --foreground: 0 0% 100%;

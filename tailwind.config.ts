@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Inter Tight"', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['My-Font', 'system-ui', 'serif'],
+        body: ['My-Font', 'system-ui', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
