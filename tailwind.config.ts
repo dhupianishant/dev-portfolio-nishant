@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Brockmann', 'system-ui', 'serif'],
-        body: ['Brockmann', 'system-ui', 'serif'],
+        display: ['"Inter Tight"', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
