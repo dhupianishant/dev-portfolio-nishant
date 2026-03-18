@@ -8,6 +8,7 @@ import TechStack from '@/components/TechStack';
 import AboutSection from '@/components/AboutSection';
 import Testimonials from '@/components/Testimonials';
 import ContactCTA from '@/components/ContactCTA';
+import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 
 const Index = () => {
@@ -32,6 +33,7 @@ const Index = () => {
         <Testimonials />
         <ContactCTA />
       </main>
+      <Footer />
     </>
   );
 };

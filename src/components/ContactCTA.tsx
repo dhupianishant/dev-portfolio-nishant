@@ -57,15 +57,6 @@ const ContactCTA = () => {
         </motion.div>
       </div>
 
-      {/* Footer */}
-      <div className="mt-24 pt-8 border-t border-border max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2026 DevStudio. All rights reserved.</p>
-          <p className="font-display">
-            Crafted with <span className="gradient-text font-bold">passion</span>
-          </p>
-        </div>
-      </div>
     </section>
   );
 };

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import '@fontsource/libre-barcode-39-text';
 
 const navItems = [
   { label: 'Work', href: '#work' },
@@ -67,9 +68,9 @@ const Navigation = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-        <a href="#" className="font-display text-xl font-bold tracking-tight">
-          <span className="gradient-text">Dev</span>
-          <span className="text-foreground">Studio</span>
+        <a href="#" className="text-[42px] [font-family:'Libre_Barcode_39_Text']">
+          <span className="gradient-text">Nishant</span>
+          <span className="text-foreground">Dhupia</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
