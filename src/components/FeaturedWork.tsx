@@ -4,39 +4,39 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Lumière',
+    title: 'HYN - Here You\'re Noticed!',
     category: 'E-Commerce Platform',
     description: 'Luxury fashion marketplace with AI-powered styling.',
     color: '#6366f1',
-    tech: ['Next.js', 'Shopify', 'AI'],
+    tech: ['Shopify', 'CSS'],
   },
   {
-    title: 'Nexus',
-    category: 'SaaS Dashboard',
+    title: 'GLYDE',
+    category: '',
     description: 'Real-time analytics platform for enterprise teams.',
     color: '#a855f7',
-    tech: ['React', 'Node.js', 'WebSocket'],
+    tech: ['Next.JS', 'React.JS', 'Node.JS'],
   },
   {
-    title: 'Meridian',
-    category: 'FinTech App',
+    title: 'Hiyasa Clothing',
+    category: 'E-Commerce Platform',
     description: 'Modern banking experience with smart insights.',
     color: '#818cf8',
-    tech: ['React Native', 'PostgreSQL', 'Stripe'],
+    tech: ['Shopify', 'CSS', 'PhonePe'],
   },
   {
-    title: 'Atlas',
-    category: 'Travel Platform',
+    title: 'Mastani Jewellery',
+    category: 'E-Commerce Platform',
     description: 'Interactive travel planning with 3D globe visualization.',
     color: '#c084fc',
-    tech: ['Three.js', 'Next.js', 'Maps API'],
+    tech: ['Shopify', 'CSS', 'Razorpay'],
   },
   {
-    title: 'Prism',
+    title: 'CareerCatalyst',
     category: 'Creative Tool',
-    description: 'Collaborative design tool for distributed teams.',
+    description: 'AI Career Coaching Platform',
     color: '#6366f1',
-    tech: ['Canvas API', 'WebRTC', 'React'],
+    tech: ['Next.JS', 'PostgreSQL', 'AI APIs'],
   },
 ];
 
@@ -100,7 +100,7 @@ const FeaturedWork = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
             Featured <span className="gradient-text">Work</span>
           </h2>
-          <p className="text-muted-foreground mt-3 text-lg">Selected projects that showcase craft and impact.</p>
+          <p className="text-muted-foreground mt-3 text-lg">Built with precision, designed for scale.</p>
         </motion.div>
 
         <div ref={viewportRef} className="px-6 md:px-12 lg:px-24 overflow-hidden">

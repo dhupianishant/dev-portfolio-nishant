@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { HeroScene } from './Scene3D';
 
 const HeroSection = () => {
@@ -16,7 +16,7 @@ const HeroSection = () => {
             className="flex items-center gap-2 mb-6"
           >
             <span className="glass-card px-4 py-1.5 text-xs font-medium text-muted-foreground flex items-center gap-2">
-              <Sparkles className="w-3 h-3 text-primary" />
+              <div className="h-2 w-2 rounded-full dark:bg-[#00A300] bg-[#00A300]"></div>
               Available for new projects
             </span>
           </motion.div>
@@ -27,7 +27,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 2.4 }}
             className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.9]"
           >
-            <span className="block">Full Stack</span>
+            <span className="block">Full-Stack</span>
             <span className="block gradient-text">Developer</span>
           </motion.h1>
 
@@ -37,7 +37,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 2.6 }}
             className="mt-6 text-xl md:text-2xl text-muted-foreground font-light max-w-xl"
           >
-            Building modern web experiences with precision and craft.
+            Building Modern Web Experiences.
           </motion.p>
 
           <motion.div
@@ -46,11 +46,11 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 2.8 }}
             className="flex flex-wrap gap-3 mt-4 mb-10"
           >
-            {['React', 'Next.js', 'Node.js', 'Shopify'].map((tech) => (
-              <span key={tech} className="text-sm text-muted-foreground font-medium">
-                {tech}
+              <span className="text-sm text-muted-foreground font-medium">
+                React.JS &nbsp;•&nbsp; Next.JS &nbsp;•&nbsp; Node.JS &nbsp;•&nbsp; Shopify <br />
+                Powering digital experiences for startups and ambitious brands.
               </span>
-            ))}
+            
           </motion.div>
 
           <motion.div
