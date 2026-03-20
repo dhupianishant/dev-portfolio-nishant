@@ -22,7 +22,7 @@ const ContactCTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
-              href="mailto:hello@devstudio.com"
+              href="mailto:work@dhupianishant.in"
               className="group inline-flex items-center gap-2 px-10 py-5 rounded-full font-display text-base font-semibold transition-all duration-300 hover:scale-105 hover:gap-3 glow-primary"
               style={{ background: 'linear-gradient(135deg, hsl(239 84% 67%), hsl(270 75% 60%))' }}
             >
@@ -30,23 +30,80 @@ const ContactCTA = () => {
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="mailto:hello@devstudio.com"
+              href="mailto:work@dhupianishant.in"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-display text-base font-semibold glass-card hover:scale-105 transition-all duration-300"
             >
               <Mail className="w-5 h-5" />
-              hello@devstudio.com
+              work@dhupianishant.in
             </a>
           </div>
 
+          <form action="https://formsubmit.co/nishantdhupia18@gmail.com" method="POST" className="max-w-xl mx-auto mb-10 grid gap-4 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label className="block text-sm font-medium text-muted-foreground">
+                Your Name
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="John Doe"
+                />
+              </label>
+              <label className="block text-sm font-medium text-muted-foreground">
+                Your Email
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="john@example.com"
+                />
+              </label>
+            </div>
+
+            <label className="block text-sm font-medium text-muted-foreground">
+              Subject
+              <input
+                type="text"
+                name="subject"
+                required
+                className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Project Inquiry"
+              />
+            </label>
+
+            <label className="block text-sm font-medium text-muted-foreground">
+              Message
+              <textarea
+                name="message"
+                required
+                rows={4}
+                className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Tell me about your project, goals, and timeline."
+              />
+            </label>
+
+            <button
+              type="submit"
+              className="w-full py-3 rounded-full font-display text-base font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 hover:scale-[1.01]"
+            >
+              Send Message
+            </button>
+            <input type="hidden" name='_captcha' value='false'/>
+          </form>
+
           <div className="flex justify-center gap-4">
             {[
-              { icon: Github, href: '#' },
-              { icon: Linkedin, href: '#' },
-              { icon: Mail, href: 'mailto:hello@devstudio.com' },
+              { icon: Github, href: 'https://github.com/dhupianishant' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/dhupianishant/' },
+              { icon: Mail, href: 'mailto:work@dhupianishant.in' },
             ].map((social, i) => (
               <motion.a
                 key={i}
                 href={social.href}
+                target={social.href.startsWith('http') ? '_blank' : '_self'}
+                rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 whileHover={{ scale: 1.15, y: -2 }}
                 className="p-4 rounded-full glass-card text-muted-foreground hover:text-foreground transition-colors"
               >

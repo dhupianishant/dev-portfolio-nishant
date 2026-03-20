@@ -1,41 +1,42 @@
 import { motion } from 'framer-motion';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer, SiNodedotjs, SiExpress, SiPython, SiPostgresql, SiMongodb, SiRedis, SiSupabase, SiShopify, SiGit, SiFigma } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 
 const categories = [
   {
     name: 'Frontend',
     techs: [
-      { name: 'React', color: '#61DAFB' },
-      { name: 'Next.js', color: '#ffffff' },
-      { name: 'TypeScript', color: '#3178C6' },
-      { name: 'Tailwind', color: '#06B6D4' },
-      { name: 'Framer Motion', color: '#FF0050' },
+      { name: 'React.JS', color: '#61DAFB', icon: SiReact },
+      { name: 'Next.JS', color: '#ffffff', icon: SiNextdotjs },
+      { name: 'TypeScript', color: '#3178C6', icon: SiTypescript },
+      { name: 'Tailwind CSS', color: '#06B6D4', icon: SiTailwindcss },
+      { name: 'Framer Motion', color: '#FF0050', icon: SiFramer },
     ],
   },
   {
     name: 'Backend',
     techs: [
-      { name: 'Node.js', color: '#339933' },
-      { name: 'Express', color: '#ffffff' },
-      { name: 'GraphQL', color: '#E10098' },
-      { name: 'Python', color: '#3776AB' },
+      { name: 'Node.JS', color: '#339933', icon: SiNodedotjs },
+      { name: 'Express.JS', color: '#ffffff', icon: SiExpress },
+      { name: 'Python', color: '#3776AB', icon: SiPython },
     ],
   },
   {
     name: 'Database',
     techs: [
-      { name: 'PostgreSQL', color: '#4169E1' },
-      { name: 'MongoDB', color: '#47A248' },
-      { name: 'Redis', color: '#DC382D' },
-      { name: 'Supabase', color: '#3FCF8E' },
+      { name: 'PostgreSQL', color: '#4169E1', icon: SiPostgresql },
+      { name: 'MongoDB', color: '#47A248', icon: SiMongodb },
+      { name: 'Redis', color: '#DC382D', icon: SiRedis },
+      { name: 'Supabase', color: '#3FCF8E', icon: SiSupabase },
     ],
   },
   {
     name: 'Tools',
     techs: [
-      { name: 'Docker', color: '#2496ED' },
-      { name: 'Git', color: '#F05032' },
-      { name: 'Figma', color: '#F24E1E' },
-      { name: 'AWS', color: '#FF9900' },
+      { name: 'Shopify', color: '#2496ED', icon: SiShopify },
+      { name: 'Git', color: '#F05032', icon: SiGit },
+      { name: 'Figma', color: '#F24E1E', icon: SiFigma },
+      { name: 'AWS', color: '#FF9900', icon: FaAws },
     ],
   },
 ];
@@ -78,11 +79,10 @@ const TechStack = () => {
                     transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                     style={{ animationDelay: `${ti * 0.5}s` }}
                   >
-                    <div
-                      className="w-2 h-2 rounded-full transition-all duration-300 group-hover:scale-150 group-hover:shadow-lg"
-                      style={{ backgroundColor: tech.color, boxShadow: `0 0 0px ${tech.color}` }}
-                    />
-                    <span className="text-sm font-medium">{tech.name}</span>
+                    <div className="flex items-center gap-3 group cursor-pointer">
+                      <tech.icon className="w-5 h-5 transition-all duration-300 group-hover:scale-110" style={{ color: tech.color }} />
+                      <span className="text-sm font-medium">{tech.name}</span>
+                    </div>
                   </motion.div>
                 ))}
               </div>

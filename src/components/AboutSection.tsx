@@ -21,9 +21,6 @@ const AboutSection = () => {
                   }}
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl glass-card flex items-center justify-center animate-float">
-                <span className="font-display text-2xl font-bold gradient-text">5+</span>
-              </div>
             </div>
           </motion.div>
 
@@ -37,18 +34,14 @@ const AboutSection = () => {
               About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              I'm a full-stack developer passionate about building beautiful, performant web experiences.
-              I believe great software should feel invisible — fast, intuitive, and delightful.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              With 5+ years of experience shipping products for startups and enterprises, I bring technical depth and design sensibility to every project.
+              I'm a full-stack developer focused on building modern, fast and scalable web applications. I help startups and businesses turn ideas into polished digital products.
             </p>
 
             <div className="space-y-4">
               {[
-                { icon: MapPin, text: 'San Francisco, CA' },
-                { icon: Briefcase, text: '5+ years experience' },
-                { icon: GraduationCap, text: 'CS @ Stanford University' },
+                { icon: MapPin, text: 'Jaipur, IN' },
+                { icon: Briefcase, text: '2+ years experience' },
+                { icon: GraduationCap, text: 'CSE @ JECRC' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3 text-muted-foreground">
                   <item.icon className="w-4 h-4 text-primary" />

@@ -4,18 +4,18 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Chen',
-    role: 'CEO, Lumière',
+    name: 'Vishal Dadhich',
+    role: 'Co-Founder, HYN',
     text: 'Working with them transformed our digital presence. The attention to detail and performance optimization was exceptional.',
   },
   {
-    name: 'Marcus Rivera',
-    role: 'CTO, Nexus',
-    text: 'They delivered a complex real-time dashboard ahead of schedule. The code quality and architecture were top-notch.',
+    name: 'Tanish Anam',
+    role: 'CEO, GLYDE',
+    text: 'Nishant truly bought our vision for GLYDE to life. He built a sleek and intuitive website that perfectly showcases our tech-driven wiper glasses.\n\n A great collaboration from start to finish. Highly recommended.',
   },
   {
-    name: 'Emily Park',
-    role: 'Founder, Atlas',
+    name: 'Anuja A. Kumar',
+    role: 'Co-Founder, Hiyasa Designs',
     text: 'The 3D visualizations they built for our platform became our biggest differentiator. Truly innovative work.',
   },
 ];
@@ -52,7 +52,7 @@ const Testimonials = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
             >
-              <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mb-8">
+              <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mb-8 whitespace-pre-line">
                 "{testimonials[current].text}"
               </p>
               <div>

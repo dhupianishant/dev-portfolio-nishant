@@ -67,7 +67,7 @@ const Navigation = () => {
         />
       </motion.div>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 md:p-0 p-3">
         <a href="#" className="text-[40px] [font-family:'Libre_Barcode_39_Text']">
           <span className="gradient-text">Nishant</span>
           <span className="text-foreground">Dhupia</span>

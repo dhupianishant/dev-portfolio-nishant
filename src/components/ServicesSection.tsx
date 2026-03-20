@@ -5,25 +5,25 @@ const services = [
   {
     icon: Globe,
     title: 'Web Applications',
-    description: 'Full-stack applications built for scale and performance.',
+    description: 'Full-stack SaaS platforms and dashboards.',
     color: '#6366f1',
   },
   {
     icon: Code2,
     title: 'Business Websites',
-    description: 'High-converting sites that tell your brand story.',
+    description: 'Modern high-converting websites.',
     color: '#a855f7',
   },
   {
     icon: ShoppingBag,
     title: 'Shopify Development',
-    description: 'Custom storefronts and headless commerce solutions.',
+    description: 'Custom themes and store optimizations.',
     color: '#818cf8',
   },
   {
     icon: Settings,
     title: 'Custom Systems',
-    description: 'Tailored platforms and internal tools for teams.',
+    description: 'Internal tools, portals, APIs.',
     color: '#c084fc',
   },
 ];
