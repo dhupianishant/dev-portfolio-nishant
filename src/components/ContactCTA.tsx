@@ -1,6 +1,32 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Github, Linkedin } from 'lucide-react';
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    subject: e.target.subject.value,
+    message: e.target.message.value,
+  };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+    e.target.reset();
+  } else {
+    alert("Failed to send message. Please try again.");
+  } 
+};
+
 const ContactCTA = () => {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
@@ -38,7 +64,8 @@ const ContactCTA = () => {
             </a>
           </div>
 
-          <form action="https://formsubmit.co/nishantdhupia18@gmail.com" method="POST" className="max-w-xl mx-auto mb-10 grid gap-4 text-left">
+          {/* <form action="https://formsubmit.co/nishantdhupia18@gmail.com" method="POST" className="max-w-xl mx-auto mb-10 grid gap-4 text-left"> */}
+          <form onSubmit={handleSubmit} className="max-w-xl mx-auto mb-10 grid gap-4 text-left">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <label className="block text-sm font-medium text-muted-foreground">
                 Your Name
@@ -90,7 +117,8 @@ const ContactCTA = () => {
             >
               Send Message
             </button>
-            <input type="hidden" name='_captcha' value='false'/>
+            
+            {/* <input type="hidden" name='_captcha' value='false'/> */}
           </form>
 
           <div className="flex justify-center gap-4">
