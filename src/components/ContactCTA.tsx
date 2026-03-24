@@ -4,19 +4,21 @@ import { ArrowRight, Mail, Github, Linkedin } from 'lucide-react';
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    subject: e.target.subject.value,
-    message: e.target.message.value,
+  const formData = new FormData(e.target);
+
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    subject: formData.get('subject'),
+    message: formData.get('message'),
   };
 
-  const res = await fetch("/api/contact", {
+  const res = await fetch("http://localhost:3001/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(formData),
+    body: JSON.stringify(data),
   });
 
   if (res.ok) {
