@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Briefcase, GraduationCap } from 'lucide-react';
+import Lottie from 'lottie-react';
+import devAnimation from '../assets/animations/webDevelopment.json';
 
 const AboutSection = () => {
   return (
@@ -13,13 +15,8 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <div className="w-72 h-72 md:w-80 md:h-80 rounded-3xl glass-card overflow-hidden mx-auto md:mx-0">
-                <div
-                  className="w-full h-full animate-morph"
-                  style={{
-                    background: 'linear-gradient(135deg, hsl(239 84% 67% / 0.3), hsl(270 75% 60% / 0.3))',
-                  }}
-                />
+              <div className="w-72 h-72 md:w-80 md:h-80 mx-auto md:mx-0">
+                <Lottie animationData={devAnimation} loop={true} style={{ width: '100%', height: '100%' }} />
               </div>
             </div>
           </motion.div>
