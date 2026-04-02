@@ -28,7 +28,6 @@ const Index = () => {
         <FeaturedWork />
         <ServicesSection />
         <ProcessTimeline />
-        <TechStack />
         <AboutSection />
         <Testimonials />
         <ContactCTA />

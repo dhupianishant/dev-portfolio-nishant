@@ -24,11 +24,9 @@ const ContactCTA = () => {
     });
 
     if (res.ok) {
-      alert("Thanks for reaching out. I'll get back to you soon!");
       setStatus("success");
       e.target.reset();
     } else {
-      alert("Not you, somehthing broke on my side. Give it another shot or email me directly at work@dhupianishant.in");
       setStatus("error");
     }
   }
