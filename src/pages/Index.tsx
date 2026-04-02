@@ -4,7 +4,6 @@ import HeroSection from '@/components/HeroSection';
 import FeaturedWork from '@/components/FeaturedWork';
 import ServicesSection from '@/components/ServicesSection';
 import ProcessTimeline from '@/components/ProcessTimeline';
-import TechStack from '@/components/TechStack';
 import AboutSection from '@/components/AboutSection';
 import Testimonials from '@/components/Testimonials';
 import ContactCTA from '@/components/ContactCTA';

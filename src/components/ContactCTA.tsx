@@ -4,30 +4,38 @@ import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
 
 const ContactCTA = () => {
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null); // "success" | "error" | null
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
+    setStatus(null); 
 
-    const data = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-    }
+    try {
+      const data = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+      };
 
-    const res = await fetch("/api/contactMe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+      const res = await fetch("/api/contactMe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    if (res.ok) {
-      setStatus("success");
-      e.target.reset();
-    } else {
+      if (res.ok) {
+        setStatus("success");
+        e.target.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Network or server error:", error);
       setStatus("error");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -72,7 +80,6 @@ const ContactCTA = () => {
             </a>
           </div>
 
-          {/* ✅ FORM WITH LOADING AND STATUS */}
           <form
             onSubmit={handleSubmit}
             className="max-w-xl mx-auto mb-10 grid gap-4 text-left"
@@ -123,7 +130,6 @@ const ContactCTA = () => {
               />
             </label>
 
-            {/* ✅ BUTTON WITH LOADING */}
             <button
               type="submit"
               disabled={loading}
@@ -134,7 +140,6 @@ const ContactCTA = () => {
               {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {/* ✅ STATUS MESSAGE */}
             {status === "success" && (
               <p className="text-green-500 text-center font-medium">
                 Thanks for reaching out. I'll get back to you soon!
@@ -143,12 +148,12 @@ const ContactCTA = () => {
 
             {status === "error" && (
               <p className="text-red-500 text-center font-medium">
-                Not you, somehthing broke on my side. Give it another shot or email me directly at work@dhupianishant.in
+                Something broke on my side — try again or email me at
+                work@dhupianishant.in
               </p>
             )}
           </form>
 
-          {/* Social Icons */}
           <div className="flex justify-center gap-4">
             {[
               { icon: Github, href: "https://github.com/dhupianishant" },
@@ -158,14 +163,8 @@ const ContactCTA = () => {
               <motion.a
                 key={i}
                 href={social.href}
-                target={
-                  social.href.startsWith("http") ? "_blank" : "_self"
-                }
-                rel={
-                  social.href.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
+                target={social.href.startsWith("http") ? "_blank" : "_self"}
+                rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 whileHover={{ scale: 1.15, y: -2 }}
                 className="p-4 rounded-full glass-card text-muted-foreground hover:text-foreground transition-colors"
               >
