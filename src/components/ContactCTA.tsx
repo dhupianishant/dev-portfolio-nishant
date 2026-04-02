@@ -15,7 +15,7 @@ const ContactCTA = () => {
       message: e.target.message.value,
     }
 
-    const res = await fetch("/api/contact", {
+    const res = await fetch("/api/contactMe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
