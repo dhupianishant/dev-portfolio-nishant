@@ -6,41 +6,32 @@ const ContactCTA = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null); // "success" | "error" | null
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); 
-    setLoading(true);
-    setStatus(null);
-
-    const formData = new FormData(e.target);
+  async function handleSubmit(e) {
+    e.preventDefault();
 
     const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const res = await fetch("https://dev-portfolio-nishant-1.onrender.com/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        e.target.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch (err) {
-      setStatus("error");
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
     }
 
-    setLoading(false);
-  };
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      alert("Thanks for reaching out. I'll get back to you soon!");
+      setStatus("success");
+      e.target.reset();
+    } else {
+      alert("Not you, somehthing broke on my side. Give it another shot or email me directly at work@dhupianishant.in");
+      setStatus("error");
+    }
+  }
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
