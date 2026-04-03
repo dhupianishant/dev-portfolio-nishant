@@ -9,6 +9,8 @@ import Testimonials from '@/components/Testimonials';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
