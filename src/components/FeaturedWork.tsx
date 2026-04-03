@@ -9,7 +9,7 @@ const projects = [
     description: "Fashion that stands out!",
     color: "#6366f1",
     tech: ["Shopify", "Liquid", "JavaScript", "Custom CSS"],
-    image: "/projects/hyn.png",
+    image: "/images/hynClothing.png",
     link: "https://hynclothing.com",
   },
   {
@@ -18,8 +18,8 @@ const projects = [
     description: "You don't just scroll this.",
     color: "#a855f7",
     tech: ["Next.JS", "Three.JS", "React.JS", "Tailwind CSS"],
-    image: "/projects/glyde.png",
-    link: "https://glyde.app",
+    image: "/images/glyde.png",
+    link: "https://glyde.dhupianishant.in",
   },
   {
     title: "Hiyasa Clothing",
@@ -27,7 +27,7 @@ const projects = [
     description: "Designed for conversion.",
     color: "#818cf8",
     tech: ["Shopify", "Liquid", "JavaScript", "Custom CSS"],
-    image: "/projects/hiyasa.png",
+    image: "/images/hiyasaClothing.png",
     link: "https://hiyasadesign.com",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     description: "Luxury, digitally redefined.",
     color: "#c084fc",
     tech: ["Shopify", "Liquid", "JavaScript", "Custom CSS"],
-    image: "/projects/mastani.png",
+    image: "/images/mastaniJewellery.png",
     link: "https://shopmastanijewellery.com",
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     description: "Smarter Career Decisions.",
     color: "#6366f1",
     tech: ["Next.JS", "React", "PostgreSQL", "AI APIs"],
-    image: "/images/careerCatalyst.jpg",
+    image: "/images/careerCatalyst.png",
     link: "https://careercatalyst.dhupianishant.in",
   },
 ];
@@ -150,11 +150,11 @@ const FeaturedWork = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity duration-300"
+                      className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-500"
                     />
 
                     {/* Bottom Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 flex flex-col justify-end">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                           {project.category}
