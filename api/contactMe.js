@@ -50,7 +50,7 @@ export default async function handler(req, res) {
           logger.info("Email sent successfully!");
           res.status(200).json({ message: "Email sent successfully!" });
      } catch (error) {
-          logger.error({ error }, "Error sending email!");
+          logger.error({ error: error?.message, full: error }, "Error sending email!");
           res.status(500).json({ message: "Error sending email!" });
      }
 }
