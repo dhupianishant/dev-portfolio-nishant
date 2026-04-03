@@ -15,7 +15,7 @@ export default async function handler(req, res) {
      if (!process.env.RESEND_API_KEY || !process.env.CONTACT_EMAIL) {
           logger.error("Missing required environment variables.");
           return res.status(500).json({ message: "Server configuration error!" });
-     }
+          }
 
      try {
           const { name, email, message } = req.body;
