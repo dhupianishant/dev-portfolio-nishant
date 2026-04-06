@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
+import api from "@/utils/api";
 
 const ContactCTA = () => {
   const [loading, setLoading] = useState(false);
@@ -9,7 +10,14 @@ const ContactCTA = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    setStatus(null); 
+    setStatus(null);
+
+    // Log user action
+    api.post('/log', {
+      type: 'USER_ACTION',
+      message: 'User submitted contact form',
+      meta: { action: 'contact_form_submit' }
+    }).catch(err => console.error('Logging error:', err));
 
     try {
       const data = {
@@ -34,6 +42,12 @@ const ContactCTA = () => {
     } catch (error) {
       console.error("Network or server error:", error);
       setStatus("error");
+      // Log error
+      api.post('/log', {
+        type: 'ERROR',
+        message: 'Error submitting contact form',
+        meta: { error: error.message }
+      }).catch(err => console.error('Logging error:', err));
     } finally {
       setLoading(false);
     }

@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import api from '@/utils/api';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,6 +19,15 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Log page view
+    api.post('/log', {
+      type: 'PAGE_VIEW',
+      message: 'User visited the homepage',
+      meta: { page: 'home' }
+    }).catch(err => console.error('Logging error:', err));
   }, []);
 
   return (
